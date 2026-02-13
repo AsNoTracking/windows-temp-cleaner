@@ -2,7 +2,7 @@
 
 Windows 11 için günlük Temp klasörü temizleme aracı.
 
-## 📁 Dosya Listesi
+## Dosya Listesi
 
 | Dosya | Açıklama |
 |-------|----------|
@@ -11,7 +11,7 @@ Windows 11 için günlük Temp klasörü temizleme aracı.
 | `Install-WindowsTempCleanup.ps1` | Kurulum script'i |
 | `Uninstall-WindowsTempCleanup.ps1` | Kaldırma script'i |
 
-## 🚀 Kurulum
+## Kurulum
 
 ### Yöntem 1: Otomatik Kurulum (Önerilen)
 
@@ -45,7 +45,7 @@ Windows 11 için günlük Temp klasörü temizleme aracı.
    Register-ScheduledTask -TaskName "WindowsTempCleanup" -Action $action -Trigger $trigger -Settings $settings -Principal $principal -Force
    ```
 
-## 📋 Kullanım
+## Kullanım
 
 ### Komut Satırı Seçenekleri
 
@@ -70,7 +70,7 @@ Windows 11 için günlük Temp klasörü temizleme aracı.
 .\Clean-WindowsTemp.ps1 -IncludeUserTemp
 ```
 
-## ⏰ Zamanlama
+## Zamanlama
 
 Task Scheduler görevi şu şekilde yapılandırılmıştır:
 
@@ -107,7 +107,7 @@ Get-Content "C:\ProgramData\WindowsTempCleanup\cleanup.log" -Tail 50
 notepad "C:\ProgramData\WindowsTempCleanup\cleanup.log"
 ```
 
-## 🗑️ Kaldırma
+## Kaldırma
 
 ```powershell
 .\Uninstall-WindowsTempCleanup.ps1
@@ -118,21 +118,21 @@ Bu komut:
 - Script dosyalarını siler
 - İsterseniz log dosyalarını da temizler
 
-## 📝 Temizlenen Dizinler
+## Temizlenen Dizinler
 
 | Dizin | Açıklama |
 |-------|----------|
 | `C:\Windows\Temp` | Windows sistem temp dosyaları |
 | `%TEMP%` | Kullanıcı temp dosyaları (`-IncludeUserTemp` ile) |
 
-## ⚠️ Önemli Notlar
+## Önemli Notlar
 
 1. **Administrator yetkisi gereklidir** - `C:\Windows\Temp` için
 2. **Kullanımdaki dosyalar atlanır** - Hata önlemek için
 3. **İlk çalıştırmada** `-DryRun` ile önizleme yapmanız önerilir
 4. **Log dosyası** tüm işlemleri kaydeder
 
-## 🛡️ Güvenlik
+## Güvenlik
 
 - Script sadece temp dosyalarını siler
 - Sistem dosyalarına dokunmaz
